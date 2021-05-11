@@ -1,0 +1,91 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin       : 10px auto;
+    padding      : 10px;
+    width        : 90%;
+    background   : lightgray;
+    border-radius: 10px;
+    /* height       : 95vh; */
+    /* overflow     : scroll; */
+}
+
+.header {
+    padding   : 10px 0;
+    text-align: center;
+}
+
+.search_area {
+    margin    : 20px 0;
+    text-align: center;
+}
+
+.search_area input {
+    width        : 50%;
+    padding      : .5rem;
+    font-size    : 1.2rem;
+    border       : 0;
+    outline      : 0;
+    border-radius: 5px;
+    caret-color  : red;
+}
+
+.search_area input::placeholder {
+    color: tomato;
+}
+
+
+.country_container {
+    display: flex;
+    padding: 20px 10px;
+
+}
+
+.all_country {
+    width          : 100%;
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: space-evenly;
+    align-items    : center;
+    cursor         : pointer;
+    transition     : .2s ease;
+}
+
+.country_holder {
+    text-align      : center;
+    flex-basis      : 280px;
+    margin-bottom   : 25px;
+    height          : 200px;
+    background-color: lightgoldenrodyellow;
+
+}
+
+.country_holder img {
+    width     : 100%;
+    height    : 80%;
+    object-fit: cover;
+}
+
+
+
+
+.country_info {
+    width     : 25%;
+    text-align: center;
+    height    : 450px;
+    position  : fixed;
+    top       : 205px;
+    right     : 100px;
+    border    : 1px dashed gray;
+}
+
+.country_info img {
+    width     : 90%;
+    height    : 220px;
+    object-fit: cover;
+
+}
