@@ -1,4 +1,4 @@
-# Country Info - React App <|> [Live Link](https://www.__.com)
+# Country Info - React App <|> [Live Link](https://countriy-information.netlify.app)
 
 ## API use
 ### `https://restcountries.eu/rest/v2/all`
