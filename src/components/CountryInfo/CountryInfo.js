@@ -9,7 +9,7 @@ const CountryInfo = (props) => {
         <>
             <img src={flag} alt="" />
             <h2>{CountryName}</h2>
-            <h3>capital : {capital || 'Missing'}</h3>
+            <h5>capital : {capital || 'Missing'}</h5>
             <p>Population : {population}</p>
             <p>Region : {region}</p>
             <p>Language : {languages?.map(lan => lan.name + ' ')} </p>

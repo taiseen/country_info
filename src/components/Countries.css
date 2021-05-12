@@ -5,11 +5,11 @@
 }
 
 .container {
-    margin       : 10px auto;
-    padding      : 10px;
-    width        : 90%;
-    background   : lightgray;
-    border-radius: 10px;
+    margin          : 10px auto;
+    padding         : 10px;
+    width           : 90%;
+    background      : lightgray;
+    border-radius   : 10px;
     /* height       : 95vh; */
     /* overflow     : scroll; */
 }
@@ -32,17 +32,19 @@
     outline      : 0;
     border-radius: 5px;
     caret-color  : red;
+    text-align: center;
 }
 
 .search_area input::placeholder {
-    color: tomato;
+    color     : tomato;
+    text-align: center;
 }
 
 
 .country_container {
-    display: flex;
-    padding: 20px 10px;
-
+    display : flex;
+    padding : 20px 10px;
+    position: relative;
 }
 
 .all_country {
@@ -58,10 +60,9 @@
 .country_holder {
     text-align      : center;
     flex-basis      : 280px;
-    margin-bottom   : 25px;
-    height          : 200px;
+    margin-bottom   : 35px;
+    height          : 220px;
     background-color: lightgoldenrodyellow;
-
 }
 
 .country_holder img {
@@ -74,18 +75,23 @@
 
 
 .country_info {
+    padding   : 15px 0;
     width     : 25%;
     text-align: center;
     height    : 450px;
-    position  : fixed;
-    top       : 205px;
-    right     : 100px;
-    border    : 1px dashed gray;
+    position  : absolute;
+    top       : 20px;
+    right     : 30px;
+    border    : 2px dashed gray;
 }
 
 .country_info img {
     width     : 90%;
     height    : 220px;
     object-fit: cover;
+}
 
+.country_info p {
+    line-height: 5px;
+    padding-top: 10px;
 }

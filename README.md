@@ -18,6 +18,8 @@
 * Searching option
 * After click in country, details info show | toggle
 * After click outside, details info hide | toggle
+* Bootstrap | linking at index.html page
+* Pagination
 
 
 
