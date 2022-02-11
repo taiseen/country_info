@@ -3,16 +3,17 @@ import React from 'react';
 const CountryInfo = (props) => {
 
     const { countryObject } = props;
-    const { name: CountryName, flag, capital, population, region, languages } = countryObject;
+    const { name, flags, capital, population, region, languages } = countryObject;
+
 
     return (
         <>
-            <img src={flag} alt="" />
-            <h2>{CountryName}</h2>
+            <img src={flags.png} alt="" />
+            <h2>{name.common}</h2>
             <h5>capital : {capital || 'Missing'}</h5>
             <p>Population : {population}</p>
             <p>Region : {region}</p>
-            <p>Language : {languages?.map(lan => lan.name + ' ')} </p>
+            <p>Language : {Object.keys(languages).map(lan => languages[lan] + '\n')} </p>
         </>
     );
 };

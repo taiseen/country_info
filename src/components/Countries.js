@@ -20,9 +20,10 @@ const Countries = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [flagsPerPage] = useState(12);
 
+
     // for get all countries
     useEffect(() => {
-        const url = `https://restcountries.eu/rest/v2/all`;
+        const url = `https://restcountries.com/v3.1/all`;
         fetch(url)
             .then(res => res.json())
             .then(data => setCountries(data))
@@ -32,7 +33,7 @@ const Countries = () => {
 
     // for get only searching country
     useEffect(() => {
-        const url = `https://restcountries.eu/rest/v2/name/${searchCountry}`
+        const url = `https://restcountries.com/v3.1/name/${searchCountry}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -47,7 +48,14 @@ const Countries = () => {
     const firstPage = lastPage - flagsPerPage;
     const currentFlags = countries.slice(firstPage, lastPage);
 
-    console.log(currentFlags);
+
+    // console.log(countries);
+    // console.log(currentFlags.sort((a, b) => a.name.common - b.name.common).map(c => c.name.common))
+    // console.log(currentFlags.sort())
+
+    console.log([...currentFlags].sort((a, b) => a.name.common > b.name.common ? 1 : -1).map(c => c));
+
+    //.map(c => c.name.common)
 
     // after user click, display divide into Two section | logic...
     const handleClick = (country) => {
@@ -109,16 +117,16 @@ const Countries = () => {
                             <div className="all_country">
                                 {
                                     getSearchCountry.length > 0 ?
-                                        getSearchCountry?.map(country =>
+                                        getSearchCountry?.sort((a, b) => a.name.common > b.name.common ? 1 : -1).map(country =>
                                             <CountryHolder
-                                                key={country.alpha3Code}
+                                                key={country.cca3}
                                                 countryObject={country}
                                                 userClick={handleClick} />
                                         )
                                         :
-                                        currentFlags?.map(country =>
+                                        currentFlags?.sort((a, b) => a.name.common > b.name.common ? 1 : -1).map(country =>
                                             <CountryHolder
-                                                key={country.alpha3Code}
+                                                key={country.cca3}
                                                 countryObject={country}
                                                 userClick={handleClick} />
                                         )
@@ -129,16 +137,16 @@ const Countries = () => {
                                 {
 
                                     getSearchCountry.length > 0 ?
-                                        getSearchCountry?.map(country =>
+                                        getSearchCountry?.sort((a, b) => a.name.common > b.name.common ? 1 : -1).map(country =>
                                             <CountryHolder
-                                                key={country.alpha3Code}
+                                                key={country.cca3}
                                                 countryObject={country}
                                                 userClick={handleClick} />
                                         )
                                         :
-                                        currentFlags?.map(country =>
+                                        currentFlags?.sort((a, b) => a.name.common > b.name.common ? 1 : -1).map(country =>
                                             <CountryHolder
-                                                key={country.alpha3Code}
+                                                key={country.cca3}
                                                 countryObject={country}
                                                 userClick={handleClick} />
                                         )
